@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { ContatoComponent } from './contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     MenuComponent,
     LoginComponent,
     RodapeComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,
