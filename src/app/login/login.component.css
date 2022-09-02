@@ -1,11 +1,19 @@
 
 .color{
-    color: #e2f5f1;
+    color: #3f4242;
 }
 .bg{
 
-    background-color:#a9d64f;
+    background-color:#92d2d6;
     background-repeat: no-repeat;
     min-height: 90px;
 
+}
+
+#img-foto{
+    background-image: url('https://i.imgur.com/vN9Sxhk.jpg');
+    min-height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
