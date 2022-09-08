@@ -18,7 +18,7 @@
 
                     <div class="form-group">
                         <label for="usuario">Usuário</label>
-                        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+                        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu e-mail">
                     </div>
 
                     <div class="form-group">
@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Mínimo 8 caracteres">
                     </div>
 
                     <div class="form-group">
@@ -39,14 +39,35 @@
 
                     <div class="form-group">
                         <label for="tipo">Tipo de Usuário</label>
-                        <select class="form-control " name="tipo" id="tipo">
-                            <option>Selecione um tipo de usuário:</option>
-                            <option value="normal">Normal</option>
-                            <option value="adm">Administrador</option>
-                        </select>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tipo" id="tipo" value="comum">
+                        <label class="form-check-label" for="inlineRadio1">Comum</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tipo" id="tipo" value="voluntario">
+                        <label class="form-check-label" for="inlineRadio2">Voluntário</label>
+                      </div>
+                    <!--autentificação pelo cpf/cnpj-->
+                      <div class="form-group" *ngIf="isCpf">
+                        <label for="cpf"></label>
+                        <span class="fa fa-id-card-o"></span>
+                        <input type="text" class="form-control borda bg-m" name="cpf" id="cpf" placeholder="Digite seu CPF" maxlength="11">
+                      </div>
 
-                    <div class="d-flex justify-content-center">
+                      <div class="form-group" *ngIf="!isCpf">
+                        <label for="cpf"></label>
+                        <span class="fa fa-id-card-o"></span>
+                        <input type="text" class="form-control borda bg-m" name="cpf" id="cpf" placeholder="Digite seu CNPJ" maxlength="14">
+                      </div>
+
+                      <div class="form-check" *ngIf="isCpf">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" (change)="onChangeCheckBox()">
+                        <label class="form-check-label" for="defaultCheck1"> Ou clique aqui para CNPJ</label>
+                      </div>
+                    <!--/autentificação pelo cpf/cnpj-->
+
+                    <div class="d-flex justify-content-center mt-5">
 
                         <button type="submit" class="btn btn-danger mr-4" routerLink='/login'>Cancelar</button>
                         <button type="submit" class="btn btn-success" routerLink="/cadastrar">Cadastrar</button>
