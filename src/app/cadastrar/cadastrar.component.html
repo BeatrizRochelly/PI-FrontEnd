@@ -13,27 +13,27 @@
 
                     <div class="form-group">
                         <label for="usuario">Nome</label>
-                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+                        <input [(ngModel)]='Usuario'.nome class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
                     </div>
 
                     <div class="form-group">
                         <label for="usuario">Usuário</label>
-                        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu e-mail">
+                        <input [(ngModel)]='Usuario'.usuario class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu e-mail">
                     </div>
 
                     <div class="form-group">
                         <label for="foto">Link da foto</label>
-                        <input class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+                        <input [(ngModel)]='Usuario'.foto class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
                     </div>
 
                     <div class="form-group">
                         <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Mínimo 8 caracteres">
+                        <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Mínimo 8 caracteres">
                     </div>
 
                     <div class="form-group">
                         <label for="ConfirmSenha">Confirmar Senha</label>
-                        <input class="form-control" type="password" name="ConfirmSenha" id="Confirmsenha"
+                        <input [(ngModel)]='Usuario'.senha class="form-control" type="password" name="ConfirmSenha" id="Confirmsenha"
                             placeholder="Confirme sua senha">
                     </div>
 
@@ -41,7 +41,7 @@
                         <label for="tipo">Tipo de Usuário</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipo" id="tipo" value="comum">
+                        <input class="form-check-input" type="radio" name="tipo" id="tipo" (change)="tipoUsuario($event)" value="comum">
                         <label class="form-check-label" for="inlineRadio1">Comum</label>
                       </div>
                       <div class="form-check form-check-inline">
@@ -70,7 +70,7 @@
                     <div class="d-flex justify-content-center mt-5">
 
                         <button type="submit" class="btn btn-danger mr-4" routerLink='/login'>Cancelar</button>
-                        <button type="submit" class="btn btn-success" routerLink="/cadastrar">Cadastrar</button>
+                        <button type="submit" class="btn btn-success" routerLink="/cadastrar" (click)="cadastrar()">Cadastrar</button>
 
                     </div>
 
