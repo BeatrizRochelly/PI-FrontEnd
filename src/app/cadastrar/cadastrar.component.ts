@@ -9,6 +9,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./cadastrar.component.css']
 })
 export class CadastrarComponent implements OnInit {
+  
   isCpf:boolean = true
 
   Usuario: Usuario = new Usuario
