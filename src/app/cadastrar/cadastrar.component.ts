@@ -9,44 +9,42 @@ import { Router } from '@angular/router'
   styleUrls: ['./cadastrar.component.css']
 })
 export class CadastrarComponent implements OnInit {
-  
-  isCpf:boolean = true
 
-  Usuario: Usuario = new Usuario
+  isCpf: boolean = true
+
+  usuario: Usuario = new Usuario
   confirmarSenha: string
   tipoUser: string
 
   constructor(
     private authService: AuthService,
     private router: Router
-    ) 
-    
-    { }
-  
+  ) { }
+
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
   }
 
-  confirmSenha(event: any){
+  confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
 
   }
 
-  tipoUsuario(event:any){
+  tipoUsuario(event: any) {
     this.tipoUser = event.target.value
 
   }
 
-  cadastrar(){
-    this.Usuario.tipo = this.tipoUser
+  cadastrar() {
+    this.usuario.tipo = this.tipoUser
 
-    if(this.Usuario.senha != this.confirmarSenha){
-      alert('senhas incorretas.')
-    
+    if (this.usuario.senha != this.confirmarSenha) {
+      alert('As senhas estão incorretas.')
+
     } else {
-      this.authService.cadastrar(this.Usuario).subscribe((resp: Usuario) => {
-        this.Usuario = resp
+      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario = resp
         this.router.navigate(['/entrar'])
 
 
@@ -54,15 +52,15 @@ export class CadastrarComponent implements OnInit {
       })
 
     }
-  
-    
+
+
   }
 
-  onChangeCheckBox(){
-    if(this.isCpf == false){
-      this.isCpf=true
+  onChangeCheckBox() {
+    if (this.isCpf == false) {
+      this.isCpf = true
     } else {
-      this.isCpf=false
+      this.isCpf = false
     }
   }
 }
