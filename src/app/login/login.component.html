@@ -12,7 +12,7 @@
 
                         <div class="form-group">
                             <label for="usuario">E-mail</label>
-                            <input [(ngModel)]="usuarioLogin.usuario" type="text" class="form-control" name="usuario" id="usuario"
+                            <input [(ngModel)]='usuarioLogin.usuario' type="text" class="form-control" name="usuario" id="usuario"
                                 placeholder="Digite seu Email">
                         </div>
 
@@ -20,7 +20,7 @@
 
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input type="password" class="form-control" name="senha" id="senha"
+                            <input [(ngModel)]='usuarioLogin.senha' type="password" class="form-control" name="senha" id="senha"
                                 placeholder="Digite sua senha">
                         </div>
 
@@ -30,7 +30,7 @@
 
                         <hr class="mt-5 mb-5">
 
-                        <p class="text-center text-dark ">Quer apoiar a causa da ODS 6? 
+                        <p class="text-center text-light ">Quer apoiar a causa da ODS 6? 
                             <a routerLink="/cadastrar">  Cadastre-se Aqui!</a></p>
                     </form>
                 </div>
