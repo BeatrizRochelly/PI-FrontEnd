@@ -14,12 +14,12 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
+  entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
     return this.http.post<UsuarioLogin>('http://localhost:8080/usuarios/logar', usuarioLogin)
 
   }
 
-  cadastrar(usuario: Usuario): Observable<Usuario>{
+  cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>('http://localhost:8080/usuarios/cadastrar', usuario)
 
   }
@@ -28,14 +28,15 @@ export class AuthService {
 
 
 
-  // logado(){  // ele vai verificar se existe um token no meu enviroment se está preenchido, e ele só vai ser preenchido no entrar; e eu esse metodo vai retornar um true ou false
-    //let ok: boolean = false
+  logado() {
+    let ok: boolean = false
 
-     // if (environment.token != ''){
-       // ok= true
-    //  }
+    if (environment.token != '') {
+      ok = true
+    }
 
-   //return ok } 
+    return ok
+  }
 
 
 }

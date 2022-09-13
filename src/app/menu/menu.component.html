@@ -1,54 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info ">
-  <a class="navbar-brand text-white " href="#">EcoPonte</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<nav class="navbar navbar-expand-lg navbar-light bg">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse text-uppercase" id="conteudoNavbarSuportado ">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto d-flex align-items-center">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(página atual)</span></a>
+        <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px"
+          class="img-fluid rounded-circle">
       </li>
-      <li class="nav-item active">
-        <a class="nav-link text-black" href="sobre.html"> Sobre </a>
+      <li class="nav-item pl-3">
+        <p class="m-0 font-weight-bold text-white fs-16">Olá,{{nome}}</p>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Mais
+
+      <li class="nav-item pl-3">
+        <a>
+          <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Contato</a>
-          <a class="dropdown-item" href="#">Endereço </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sugestões</a>
-        </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-      <button class="btn btn-warning my-2 my-sm-3" type="submit">Pesquisar</button>
-    </form>
 
-    <!---dados do usuario---->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-9 d-flex">
-        <li class="nav-item active">
-          <img src="{{foto}}" alt="foto de perfil" width="50px"
-            height="50px" class="img-fluid rounded-circle">
-        </li>
-  
-        <li class="nav-item pl-3">
-          <p class="m-0 font-weight-bold text-white">Olá, {{nome}}</p>
-        </li>
-          <ul class="navbar-nav ml-auto d-flex">
-            <li class="nav-item pl-3">
-              <a (click)='sair()' class="m-0 font-weight-bold text-white sa">Sair <i class="fa fa-sign-out" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
-        </ul>
-      </div>
+<ul class="navbar-nav ml-auto d-flex align-items-center">
+<li class="nav-item pl-3">
+  <a (click)="sair()" class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+
+</li>
+</ul>
+
   </div>
 </nav>
-
-<!------->
