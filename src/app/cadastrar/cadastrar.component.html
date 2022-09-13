@@ -41,24 +41,24 @@
                         <label for="tipo">Tipo de Usuário</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipo" id="tipo" (change)="tipoUsuario($event)" value="comum">
+                        <input class="form-check-input" type="radio" name="tipo" id="tipo" (change)='tipoUsuario($event)' value="comum">
                         <label class="form-check-label" for="inlineRadio1">Comum</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipo" id="tipo" value="voluntario">
+                        <input class="form-check-input" type="radio" name="tipo" id="tipo" value="voluntario" (change)='tipoUsuario($event)'>
                         <label class="form-check-label" for="inlineRadio2">Voluntário</label>
                       </div>
                     <!--autentificação pelo cpf/cnpj-->
                       <div class="form-group" *ngIf="isCpf">
                         <label for="cpf"></label>
                         <span class="fa fa-id-card-o"></span>
-                        <input type="text" class="form-control borda bg-m" name="cpf" id="cpf" placeholder="Digite seu CPF" maxlength="11">
+                        <input type="text" class="form-control borda bg-m" name="cpf" id="cpf" placeholder="Digite seu CPF" maxlength="11" (change)='tipoDocumento($event)'>
                       </div>
 
                       <div class="form-group" *ngIf="!isCpf">
                         <label for="cpf"></label>
                         <span class="fa fa-id-card-o"></span>
-                        <input type="text" class="form-control borda bg-m" name="cpf" id="cpf" placeholder="Digite seu CNPJ" maxlength="14">
+                        <input type="text" class="form-control borda bg-m" name="cpf" id="cpf" placeholder="Digite seu CNPJ" maxlength="14" (change)='tipoDocumento($event)'>
                       </div>
 
                       <div class="form-check" *ngIf="isCpf">
