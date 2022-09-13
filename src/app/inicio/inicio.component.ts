@@ -40,14 +40,23 @@ export class InicioComponent implements OnInit {
     
   }
 
-  //publicar() {
-   /* this.tema.id = this.idTema
+  /*publicar(){  //fazendo o relacionamento das tabelas
+    this.tema.id=this.idTema
     this.postagem.tema = this.tema
 
-    this.usuario.id = this.idUsuario
-    this.postagem.usuario = this.usuario//
+    this.usuario.id = this.idUser
+    this.postagem.usuario = this.usuario
 
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: postagem) =>{
+      this.postagem = resp
+      alert('Postagem realizada com sucesso!')
+      this.postagem = new postagem()
+      this.getAllPostagem()
+    })
   }*/
 
+
+
+  
 }
 
