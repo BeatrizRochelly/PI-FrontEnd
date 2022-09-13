@@ -11,6 +11,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     LoginComponent,
     RodapeComponent,
     CadastrarComponent,
-    ContatoComponent
+    ContatoComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
