@@ -15,6 +15,10 @@ import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import{ ModalModule} from 'ngx-bootstrap/modal';
+
+
 
 @NgModule({
   declarations: [
@@ -27,13 +31,16 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
     InicioComponent,
     TemaComponent,
     TemaEditComponent,
-    TemaDeleteComponent
+    TemaDeleteComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
+    
   ],
   providers: [{
     provide: LocationStrategy,

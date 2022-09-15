@@ -10,9 +10,9 @@ import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'entrar', pathMatch: 'full' },
 
-  { path: 'login', component: LoginComponent },
+  { path: 'entrar', component: LoginComponent },
   { path: 'cadastrar', component: CadastrarComponent },
 
   { path: 'inicio', component: InicioComponent },

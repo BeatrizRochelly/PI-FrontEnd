@@ -4,7 +4,9 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-inicio',
@@ -26,7 +28,9 @@ export class InicioComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private temaService: TemaService,
+
     
   ) { }
 
@@ -39,6 +43,16 @@ export class InicioComponent implements OnInit {
 
     
   }
+
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp
+    })
+  }
+
+
+}
+
 
   /*publicar(){  //fazendo o relacionamento das tabelas
     this.tema.id=this.idTema
@@ -58,5 +72,5 @@ export class InicioComponent implements OnInit {
 
 
   
-}
+
 
