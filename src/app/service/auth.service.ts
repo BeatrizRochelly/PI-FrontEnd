@@ -24,8 +24,13 @@ export class AuthService {
 
   }
 
+  atualizar(usuario: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('http://localhost:8080/usuarios/atualizar', usuario) // mesmos endpoints que estão no eclipse em controller usuario
+  }
 
-
+  getByIdUser(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(`http://localhost:8080/usuarios/${id}`)
+  }
 
 
   logado() {
