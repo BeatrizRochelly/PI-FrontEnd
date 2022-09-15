@@ -6,6 +6,7 @@ import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
+import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -18,16 +19,19 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  tituloPost: string
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
+  nomeTema: string
 
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
 
   constructor(
     private router: Router,
+    private postagemService: PostagemService,
     private authService: AuthService,
     private temaService: TemaService,
 
@@ -41,7 +45,16 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
-    
+    this.gelAllTemas()
+    this.getAllPostagens()
+
+  }
+
+  gelAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: Tema[]) =>{
+      this.listaTemas = resp
+    })
+
   }
 
   findByIdTema() {
@@ -50,27 +63,58 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  getAllPostagens(){
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
+  }
 
-}
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUsuario).subscribe((resp: Usuario) => {
+      this.usuario = resp
+    })
+  }
 
-
-  /*publicar(){  //fazendo o relacionamento das tabelas
+   publicar(){  
     this.tema.id=this.idTema
     this.postagem.tema = this.tema
 
-    this.usuario.id = this.idUser
+    this.usuario.id = this.idUsuario
     this.postagem.usuario = this.usuario
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: postagem) =>{
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) =>{
       this.postagem = resp
       alert('Postagem realizada com sucesso!')
-      this.postagem = new postagem()
-      this.getAllPostagem()
+      this.postagem = new Postagem()
+      this.getAllPostagens()
     })
-  }*/
+  }
+
+  findByTituloPostagem(){
+
+    if(this.tituloPost == ' '){
+      this.getAllPostagens()
+    }else{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) =>{
+        this.listaPostagens = resp
+      })
+    }  
+  }
+
+  findByNomeTema(){
+
+    if(this.nomeTema == ' '){
+      this.gelAllTemas()
+    }else{
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) =>{
+        this.listaTemas = resp
+      })
+    }
+  }
 
 
 
   
 
 
+}
