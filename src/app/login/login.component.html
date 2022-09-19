@@ -1,4 +1,4 @@
-<div class="container-fluid bg color">
+<div class="container-fluid ">
 
     <div class="row d-flex align-items-center ">
 
@@ -6,33 +6,48 @@
 
             <div class="row d-flex justify-content-center" (keydown.enter)="entrar()">
 
-                <div class="col-md-6 ">
-                    <form>
-                        <h1 class="text-center mt-3 ">Entrar</h1>
+                <div class="col-md-4 mt-5 form-control  form-area-inicio margem-bemvindo">
 
-                        <div class="form-group">
-                            <label for="usuario">E-mail</label>
+                    <div class=" d-flex justify-content-end mt-1 "> <!--rota home-->
+
+                        <a type="submit" class=" 
+                        mt-2" style="color: #101010; font-size: 16px;" routerLink='/home'>Home</a>  
+                    
+                    </div> <!--/rota home-->
+
+                    <form class="textbox-1">
+                        <h1 class="text-center mt-3 textbox-1" > Entrar</h1>
+
+                        <div class="form-group mt-5">
+                            <label style="font-size: 20px;" for="usuario">E-mail</label>
                             <input [(ngModel)]='usuarioLogin.usuario' type="text" class="form-control" name="usuario"
-                                id="usuario" placeholder="Digite seu Email">
+                                id="usuario" >
                         </div>
 
 
 
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
+                        <div class="form-group  mt-5">
+                            <label style="font-size: 20px;" for="senha">Senha</label>
                             <input [(ngModel)]='usuarioLogin.senha' type="password" class="form-control" name="senha"
-                                id="senha" placeholder="Digite sua senha">
+                                id="senha" >
                         </div>
 
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success mt-2" (click)="entrar()">Entrar</button>
+                        <div class="d-flex justify-content-center mt-5">
+
+                            <button type="submit" class="but-entrar f-button text-light" style="font-size: 15px;" (click)="entrar()">Entrar</button>
                         </div>
+        
 
                         <hr class="mt-5 mb-5">
 
-                        <p class="text-center text-light ">Quer apoiar a causa da ODS 6?
-                            <a routerLink="/cadastrar"> Cadastre-se Aqui!</a>
-                        </p>
+                        <div  style="color: #E48700">
+                            <h6 class="text-center text-light ">Quer apoiar a causa da ODS 6?
+                                <a style="color: #101010" routerLink="/cadastrar"> Cadastre-se aqui!</a>
+                            </h6>
+                        </div>
+
+                        
+                       
                     </form>
                 </div>
             </div>

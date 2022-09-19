@@ -1,0 +1,31 @@
+.w-100{
+    width: 800px;
+    height: 300px;
+}
+
+.btn-round{
+    background-color: #76C893;
+}
+
+.rounded-circle{
+    width: 100px;
+    height: 100px;
+}
+
+.nav-link{
+    color: blanchedalmond;
+}
+
+.navbar-brand{
+    color: blanchedalmond;
+}
+
+.navbar{
+    background-color: #34A0A4;
+}
+
+.foto{
+    width: 500px;
+    height: 200px;
+    margin-left: 415px;
+}

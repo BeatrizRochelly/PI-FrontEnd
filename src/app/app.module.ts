@@ -20,6 +20,8 @@ import{ ModalModule} from 'ngx-bootstrap/modal';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -38,14 +40,16 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     AlertasComponent,
     PostagemEditComponent,
     PostagemDeleteComponent,
-    UserEditComponent
+    UserEditComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    OrderModule
     
   ],
   providers: [{

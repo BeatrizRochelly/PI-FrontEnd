@@ -25,9 +25,16 @@ export class InicioComponent implements OnInit {
   listaTemas: Tema[]
   idTema: number
   nomeTema: string
+  
 
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
+
+  nome = environment.nome
+  foto = environment.foto
+
+  key = 'data'
+  reverse = true
 
   constructor(
     private router: Router,

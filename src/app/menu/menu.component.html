@@ -1,32 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-light bg">
+<nav class="navbar navbar-expand navbar-light bg">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto d-flex align-items-center">
-      <li class="nav-item active">
-        <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px"
-          class="img-fluid rounded-circle">
-      </li>
-      <li class="nav-item pl-3">
-        <p class="m-0 font-weight-bold text-white fs-16">Olá,{{nome}}</p>
-      </li>
 
-      <li class="nav-item pl-3">
-        <a>
-          <a [routerLink]="['/user-edit', id] "><i class="fa fa-pencil-square-o text-white fs-16" aria-hidden="true"></i></a>
-        </a>
+  <div class="container-fluid">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg py-2">
+        <button class="navbar-toggler text-roxo1" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="fa fa-bars text-dark"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto d-flex align-items-center">
+            <li class="nav-item active p-0">
+              <img class="img-fluid mr-5 rounded-circle" width="150rem" alt="Logo ecoponte"
+                src="../../assets/img/3.png" />
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- antes-->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <p class=" font-weight-bold text-white fs-16 mr-3">
+        <a routerLink="/home"  class=" font-weight-bold text-white fs-16" >Home  </a>
+      </p>
+  </div>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav  d-flex align-items-end">
+      <li class="nav-item mb-3 ml-3">
+        <a (click)="sair()" class=" font-weight-bold text-white fs-16"> Sair </a>
       </li>
     </ul>
-
-<ul class="navbar-nav ml-auto d-flex align-items-center">
-<li class="nav-item pl-3">
-  <a (click)="sair()" class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-
-</li>
-</ul>
 
   </div>
 </nav>

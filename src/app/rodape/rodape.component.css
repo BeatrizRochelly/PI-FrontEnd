@@ -10,7 +10,7 @@ ul.social-network li {
 }
 
 .bg {
-    background-color:#228B22;
+    background-color:#1A759F;
 
 }
 
@@ -25,7 +25,7 @@ ul.social-network li {
 }
 
 .fa-instagram:hover {
-    color: pink;
+    color: rgb(204, 40, 196);
 }
 
 .fa-linkedin-square:hover {
@@ -41,5 +41,5 @@ ul.social-network li {
 }
 
 .bg-rodape {
-    background-color: #9ACD32;
+    background-color: #168AAD;
 }
