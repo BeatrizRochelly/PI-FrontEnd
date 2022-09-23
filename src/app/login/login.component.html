@@ -1,60 +1,51 @@
-<div class="container-fluid ">
-
-    <div class="row d-flex align-items-center ">
-
-        <div class="col-md-12 background-opacity-30" id="img-foto">
-
-            <div class="row d-flex justify-content-center" (keydown.enter)="entrar()">
-
-                <div class="col-md-4 mt-5 form-control  form-area-inicio margem-bemvindo">
-
-                    <div class=" d-flex justify-content-end mt-1 "> <!--rota home-->
-
-                        <a type="submit" class=" 
-                        mt-2" style="color: #101010; font-size: 16px;" routerLink='/home'>Home</a>  
-                    
-                    </div> <!--/rota home-->
-
-                    <form class="textbox-1">
-                        <h1 class="text-center mt-3 textbox-1" > Entrar</h1>
-
-                        <div class="form-group mt-5">
-                            <label style="font-size: 20px;" for="usuario">E-mail</label>
-                            <input [(ngModel)]='usuarioLogin.usuario' type="text" class="form-control" name="usuario"
-                                id="usuario" >
-                        </div>
-
-
-
-                        <div class="form-group  mt-5">
-                            <label style="font-size: 20px;" for="senha">Senha</label>
-                            <input [(ngModel)]='usuarioLogin.senha' type="password" class="form-control" name="senha"
-                                id="senha" >
-                        </div>
-
-                        <div class="d-flex justify-content-center mt-5">
-
-                            <button type="submit" class="but-entrar f-button text-light" style="font-size: 15px;" (click)="entrar()">Entrar</button>
-                        </div>
+<div class="container-fluid">
+    <div class="row">
         
 
-                        <hr class="mt-5 mb-5">
+        <div class="col-md-6  d-flex justify-content-center align-items-center">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-10">
 
-                        <div  style="color: #E48700">
-                            <h6 class="text-center text-light ">Quer apoiar a causa da ODS 6?
-                                <a style="color: #101010" routerLink="/cadastrar"> Cadastre-se aqui!</a>
-                            </h6>
+                    <h1 class="mb-3 text-center" style="color: #00C4CC;">Entrar</h1>
+                    <p class="text-center" style="color: #168d91;">Acesse sua conta para conhecer de perto as ongs
+                        parceiras do projeto EcoPonter </p>
+
+                    <form action="">
+                        <div class="form-group">
+                            <label for="usuario" style="color: #00C4CC;">Email</label>
+                            <span class="fa fa-envelope form-control-icon"></span>
+                            <input [(ngModel)]='usuarioLogin.usuario' id="emailInput" class="form-control" type="text"
+                                name="usuario" placeholder="Insira seu email" />
                         </div>
 
-                        
-                       
+                        <div class="form-group">
+                            <label for="senha" style="color: #00C4CC;">Senha</label>
+                            <span class="fa fa-lock form-control-icon"></span>
+                            <input [(ngModel)]='usuarioLogin.senha' class="form-control" type="password" name="senha"
+                                placeholder="Insira sua senha" />
+
+                            <p class="text-center fs-10 mt-3 pt-4 small" style="color: #168d91;">Ainda não tem uma
+                                conta? <a routerLink="/cadastrar"  style="font-size: 15pt;">Cadastre-se</a></p>
+
+                            <hr/>
+                            <div class="row d-flex justify-content-center py-3" style="color: #168d91;">
+                                <button (click)='entrar()' type="submit" class="mr-2 btn btn-info px-4"
+                                    style="color: #ffffff;"  > {{btn}}
+                                </button>
+                                <button class="mr-2 btn" type="button" routerLink="/home">Voltar</button>
+                                
+                            </div>
+
+                        </div>
+
                     </form>
+
                 </div>
             </div>
 
         </div>
 
+        <div class="col-md-6 img-fluid mt-1" id="bg-img"></div>
 
     </div>
-
 </div>

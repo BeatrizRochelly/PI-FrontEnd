@@ -1,109 +1,118 @@
-<div class="d-flex container-fluid color fundo ">
-
-    
-
-    <div class="container-fluid">
-        <div class="row margem-bemvindo">
-            <div class="col-md-12">
-                <h5 class="text-center"> ÁGUA POTÁVEL E SANEAMENTO </h5>
-                <h6 class="text-center"> Direito Básico e Direito de Todos </h6>  
-                
-            </div>
-        </div>
-    </div>
-    
-    
-    
-        
-    
-        <div class="col-md-4  mt-5 margincaixa form-control form-area">
-    
-            <div class="row d-flex justify-content-center ">
-    
-                <div class="col-md-10 text-color  textbox p-0">
-    
-                    <h1 class="text-center text-color  ">Criar conta</h1>
-    
-                    <div class="form-group">
-                        <label style="font-size: 15px;" for="usuario">Nome*</label>
-                        <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="nome" id="nome">
-                    </div>
-    
-                    <div class="form-group">
-                        <label style="font-size: 15px;" for="usuario">E-mail / Usuário*</label>
-                        <input [(ngModel)]='usuario.usuario' class="form-control" type="text" name="usuario" id="usuario">
-                    </div>
-    
-                    <div class="form-group">
-                        <label style="font-size: 15px;" for="foto">Link da foto</label>
-                        <input [(ngModel)]='usuario.foto' class="form-control" type="text" name="foto" id="foto">
-                    </div>
-    
-                    <div class="form-group">
-                        <label style="font-size: 15px;" for="senha">Senha*</label>
-                        <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha">
-                    </div>
-    
-                    <div class="form-group">
-                        <label style="font-size: 15px;"  for="ConfirmSenha">Confirmar Senha*</label>
-                        <input [(ngModel)]='usuario.senha' class="form-control" type="password" name="ConfirmSenha"
-                            id="Confirmsenha">
-                    </div>
-    
-                    <div class="form-group">
-                        <label style="font-size: 15px;" for="tipo">Tipo de Usuário</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipo" id="tipo" (change)='tipoUsuario($event)'
-                            value="comum">
-                        <label style="font-size: 15px;" class="form-check-label" for="inlineRadio1">Comum</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipo" id="tipo" value="voluntario"
-                            (change)='tipoUsuario($event)'>
-                        <label style="font-size: 15px;" class="form-check-label" for="inlineRadio2">Colaborador</label>
-                    </div>
-                    <!--autentificação pelo cpf/cnpj-->
-                    <div class="form-group" *ngIf="isCpf">
-                        <label style="font-size: 15px;" for="cpf"></label>
-                        <span class="fa fa-id-card-o"></span>
-                        <input type="text" class="form-control borda bg-m" name="cpf" id="cpf"  placeholder="Digite seu CPF"
-                            maxlength="11" (change)='tipoDocumento($event)'>
-                    </div>
-    
-                    <div class="form-group" *ngIf="!isCpf">
-                        <label for="cpf"></label>
-                        <span class="fa fa-id-card-o"></span>
-                        <input type="text" class="form-control borda bg-m" name="cpf" id="cpf"  placeholder="Digite seu CNPJ"
-                            maxlength="14" (change)='tipoDocumento($event)'>
-                    </div>
-    
-                    <div class="form-check" *ngIf="isCpf">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"
-                            (change)="onChangeCheckBox()">
-                        <label style="font-size: 15px;" class="form-check-label" for="defaultCheck1"> Ou clique aqui para CNPJ</label>
-                    </div>
-                    <!--/autentificação pelo cpf/cnpj-->
-    
-                    <div class="d-flex justify-content-center mt-2 ml-2">
-    
-                        <button style="font-size: 15px;" type="submit" class="but-entrar f-button" (click)="cadastrar()">Cadastrar</button>
-                    </div>
-    
-    
-                    <div class=" d-flex justify-content-center mt-1">
-    
-                        <h6 class="text-center mt-1  color-white">Já tem uma conta?
-                            <a type="submit" class="  mt-1" style="color: #101010" routerLink='/entrar'>Entrar</a>
-                        </h6>
-    
-                    </div>
-    
-    
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 img-fluid " id="bg-img"></div>
+  
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-md-10">
+  
+            <h1 class="mb-3 text-center mb-5" style="color: #00C4CC;">Criar conta</h1>
+  
+            <form action="">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nome" id="txtNome " style="color: #00C4CC;">Nome</label>
+                    <span class="fa fa-user form-control-icon"></span>
+                    <input [(ngModel)]="usuario.nome" class="form-control" type="text" name="nome" id="nome"
+                      placeholder="Seu nome">
+                  </div>
                 </div>
-            </div>
-    
-            
+  
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="usuario"  style="color: #00C4CC;">Email</label>
+                    <span class="fa fa-envelope form-control-icon"></span>
+                    <input [(ngModel)]="usuario.usuario" class="form-control" type="text" name="usuario" id="usuario"
+                      placeholder="Insira um email válido">
+                  </div>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="foto" style="color: #00C4CC;">Link da foto</label>
+                <span class="fa fa-camera form-control-icon"></span>
+                <input [(ngModel)]="usuario.foto" class="form-control" type="text" name="foto" id="foto"
+                  placeholder="Link da sua foto">
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="senha" id="senhaLabel" style="color: #00C4CC;">Senha</label>
+                    <span class="fa fa-lock form-control-icon"></span>
+                    <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha"
+                      placeholder="Sua senha">
+                    <span id="aviso"></span>
+                  </div>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="confirmaSenha" id="senhaLabel2" style="color: #00C4CC;">Confirmar senha</label>
+                    <span class="fa fa-lock form-control-icon"></span>
+                    <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmaSenha"
+                      id="confirmaSenha" placeholder="Confirme sua senha">
+                  </div>
+                </div>
+              </div>
+  
+  
+                <div class="form-group">
+                  <label style="font-size: 15px;" for="tipo" style="color: #00C4CC;">Tipo de Usuário</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="tipo" id="tipo" (change)='tipoUsuario($event)'
+                    value="comum">
+                  <label style="font-size: 15px;" class="form-check-label" for="inlineRadio1" style="color: #00C4CC;">Comum</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="tipo" id="tipo" value="voluntario"
+                    (change)='tipoUsuario($event)'>
+                  <label style="font-size: 15px;" class="form-check-label" for="inlineRadio2" style="color: #00C4CC;">Colaborador</label>
+                </div>
+                <!--autentificação pelo cpf/cnpj-->
+                <div class="form-group" *ngIf="isCpf">
+                  <label style="font-size: 15px;" for="cpf"></label>
+                  <span class="fa fa-id-card-o"></span>
+                  <input type="text" class="form-control borda bg-m" name="cpf" id="cpf" placeholder="Digite seu CPF"
+                    maxlength="11" (change)='tipoDocumento($event)'>
+                </div>
+  
+                <div class="form-group" *ngIf="!isCpf">
+                  <label for="cpf"></label>
+                  <span class="fa fa-id-card-o"></span>
+                  <input type="text" class="form-control borda bg-m" name="cpf" id="cpf" placeholder="Digite seu CNPJ"
+                    maxlength="14" (change)='tipoDocumento($event)'>
+                </div>
+  
+                <div class="form-check" *ngIf="isCpf">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"
+                    (change)="onChangeCheckBox()">
+                  <label style="font-size: 15px;" class="form-check-label" for="defaultCheck1" style="color: #00C4CC;"> Ou clique aqui para
+                    CNPJ</label>
+                </div>
+
+                <div class=" d-flex justify-content-center " >
+      
+                  <h6 class="text-center mt-4  color-white" style="color: #168d91;">Já tem uma conta?
+                      <a type="submit" class="mt-1 tetx" style="color: #145253;" routerLink='/entrar'>Entrar</a>
+                  </h6>
+  
+              </div>
+              <hr/>
+              <div class="row d-flex justify-content-center py-2">
+                <button type="submit" class="btn btn-info px-1" (click)="cadastrar()" >Cadastrar</button>
+
+                <button type="button" class="mr-2 btn" routerLink="/entrar">Cancelar</button>
+                
+              </div>
+
+              
+            </form>
+  
+          </div>
         </div>
-    
+      </div>
     </div>
+  </div>

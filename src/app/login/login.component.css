@@ -1,69 +1,49 @@
-
-.color {
-    color: white;
-}
-
 .bg {
 
-    background-color: #92d2d6;
-    background-repeat: no-repeat;
-    min-height: 90px;
-
-}
-
-#img-foto {
-    background-image: url('https://i.imgur.com/JxPgMUt.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
-    height: 114vh;
-    width: 200vh;
-
-}
-
-.form-area-inicio {
-    width: 50px;
-    height: 580px;
-    background-color: rgba(228, 230, 236, 0.137);
-    padding-left: 40px;
-    border-radius: 10px;
+  background-color: #92d2d6;
+  background-repeat: no-repeat;
+  min-height: 90px;
 
 }
 
 
-.margem-bemvindo {
-    margin-top: 610px;
-   margin-left: 650px;
-   color: rgba(250, 246, 246, 0.801);
-    
-  }
-
-  .textbox-1 {
-    color: rgb(255, 255, 255);
-
-  }
 
 
-  .text-color {
-    color: rgb(254, 254, 254);
-    text-decoration:wavy
-  }
+#bg-img{
+  background-image: url("https://i.imgur.com/G0VkGiT.png");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 110vh;
+  height: 100px;
+  width: 100px;
 
-  .form-control {
-    background-color: #918d8563 ;
-    color: var(--color-black);
-    box-shadow: none;
-    font-size: 10pt;
-    opacity: 0.9;
-  }
+}
 
-  .but-entrar {
-    display: flex;
-    border-radius: 10px;
-    border: 1px solid var(--color-yellow);
-    padding-left: 130px;
-    padding-right: 130px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: #E48700;
-  }
+a {
+  color: var(--violeta) !important;
+}
+
+a:hover {
+  color: var(--violeta) !important;
+}
+
+
+.form-group .form-control {
+  padding-left: 2.375rem;
+}
+
+.form-control-icon {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.370rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.form-control-icon {
+  color:  #619092;
+}

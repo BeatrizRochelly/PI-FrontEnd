@@ -13,7 +13,8 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
 
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
-
+  btn: string
+  carregando = false
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
     window.scroll(0,0)   
+    this.TxBtn()
   }
 
   entrar(){
@@ -52,4 +54,12 @@ export class LoginComponent implements OnInit {
   
 
   }
+
+  TxBtn(){
+    if(this.carregando == false){
+      this.btn = 'Entrar'
+    }else{
+      this.btn = 'Carregando...'
+    }
+}
 }

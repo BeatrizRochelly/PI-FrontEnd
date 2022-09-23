@@ -18,6 +18,7 @@ export class CadastrarComponent implements OnInit {
   tipoUser: string
   tipoDoc: string
 
+  
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -71,4 +72,7 @@ export class CadastrarComponent implements OnInit {
       this.isCpf = false
     }
   }
+
+
+ 
 }
