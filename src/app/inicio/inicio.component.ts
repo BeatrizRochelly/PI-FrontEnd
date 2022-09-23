@@ -32,6 +32,7 @@ export class InicioComponent implements OnInit {
 
   nome = environment.nome
   foto = environment.foto
+  
 
   key = 'data'
   reverse = true
